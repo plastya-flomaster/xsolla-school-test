@@ -8,7 +8,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Test xsolla';
+  title = 'Transactions';
   constructor (private httpService: HttpClient) {}
   transactions: string [];
 
