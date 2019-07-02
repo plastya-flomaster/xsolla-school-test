@@ -1,7 +1,17 @@
-<h2>Transactions</h2>
-<input [(ngModel)]="searchText" placeholder="search text goes here">
-<table *ngIf = "transactions">
-        <tr>
+<script>
+$(window).on("load resize", function() {
+  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+  $('.tbl-header').css({'padding-right':scrollWidth});
+}).resize();
+</script>
+
+<h2>All transactions</h2>
+  <input [(ngModel)]="searchText" placeholder="Find User..." >
+
+<div class="tbl-header">
+<table *ngIf = "transactions" cellpadding="0" cellspacing="0" border="0">
+    <thead>      
+  <tr>
           <th>№</th>
           <th>Date</th>
           <th>User</th>
@@ -11,7 +21,13 @@
           <th>Amount</th>
           <th>Status</th>
         </tr>
-      
+  </thead>
+</table>
+
+ </div> 
+ <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
         <tr *ngFor="let transaction of transactions | filter : searchText; index as i">
         <td>{{i + 1}}</td>
         <td>{{transaction.transaction.transfer_date | date:'medium'}}</td>
@@ -23,5 +39,6 @@
         <td>{{transaction.transaction.status}}</td>
          
       </tr>
-      </table>
-      
+    </tbody>
+    </table>
+    </div>  
