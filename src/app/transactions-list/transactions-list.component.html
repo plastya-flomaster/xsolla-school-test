@@ -1,0 +1,27 @@
+<h2>Transactions</h2>
+<input [(ngModel)]="searchText" placeholder="search text goes here">
+<table *ngIf = "transactions">
+        <tr>
+          <th>№</th>
+          <th>Date</th>
+          <th>User</th>
+          <th>User Email</th>
+          <th>Project</th>
+          <th>Payment method</th>
+          <th>Amount</th>
+          <th>Status</th>
+        </tr>
+      
+        <tr *ngFor="let transaction of transactions | filter : searchText; index as i">
+        <td>{{i + 1}}</td>
+        <td>{{transaction.transaction.transfer_date | date:'medium'}}</td>
+        <td>{{transaction.user.id}}</td>
+        <td>{{transaction.user.email}}</td>
+        <td>{{transaction.transaction.project.name}}</td>
+        <td>{{transaction.transaction.payment_method.name}}</td>
+        <td>{{transaction.payment_details.payment.amount | currency: transaction.payment_details.payment.currency + " "}}</td>
+        <td>{{transaction.transaction.status}}</td>
+         
+      </tr>
+      </table>
+      
