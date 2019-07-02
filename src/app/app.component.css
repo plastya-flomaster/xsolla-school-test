@@ -8,3 +8,6 @@ table, th, td
 th {
     font-weight:bold;
 }
+main{
+    display: flex;
+}
