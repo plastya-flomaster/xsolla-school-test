@@ -6,7 +6,8 @@ $(window).on("load resize", function() {
 </script>
 
 <h2>All transactions</h2>
-  <input [(ngModel)]="searchText" placeholder="Find User..." >
+<h6>Search here for users:</h6>
+  <input [(ngModel)]="searchText" placeholder="Type username..." >
 
 <div class="tbl-header">
 <table *ngIf = "transactions" cellpadding="0" cellspacing="0" border="0">

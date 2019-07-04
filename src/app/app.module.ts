@@ -9,12 +9,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TransactionsListComponent } from './transactions-list/transactions-list.component';
 import { FilterPipe }from './filter.pipe'
+import { PaymentMethodsComponent } from './payment-methods/payment-methods.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TransactionsListComponent,
+    PaymentMethodsComponent,
     FilterPipe
   ],
   imports: [
