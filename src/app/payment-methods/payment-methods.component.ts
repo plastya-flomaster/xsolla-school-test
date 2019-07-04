@@ -37,8 +37,7 @@ export class PaymentMethodsComponent {
                 this.rating.sort(function(a, b) {
                     return b[1] - a[1];
                 });
-                console.log(this.rating);            
-        },
+       },
         (err: HttpErrorResponse) => {
           console.log(err.message);
         }
