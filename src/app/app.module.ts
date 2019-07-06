@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 import { AppComponent } from './app.component';
@@ -23,6 +26,9 @@ import { ChartComponent } from "./chart/chart.component";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MatTabsModule,
+
     FormsModule,
     HttpClientModule,    
     ReactiveFormsModule, 

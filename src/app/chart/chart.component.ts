@@ -8,6 +8,11 @@ import {Chart} from 'chart.js';
 })
 export class ChartComponent implements OnInit{
     BarChart = [];
+    isShown: Boolean = true;
+    constructor() {}
+    toggleShow(){
+        this.isShown = !this.isShown;
+      }
     ngOnInit()
     {
         var ctx = document.getElementById("chart");

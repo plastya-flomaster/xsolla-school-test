@@ -8,11 +8,9 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./transactions-list.component.css']
 })
 export class TransactionsListComponent {
-  constructor (private httpService: HttpClient) {}
- 
-  isShown: Boolean = true;
   transactions: string [];
-   
+  constructor (private httpService: HttpClient) {}
+
   ngOnInit () {
       this.httpService.get('./assets/data.json').subscribe(
         data => {
@@ -23,7 +21,7 @@ export class TransactionsListComponent {
         }
       );
     }
-  }
+}
  
 
 

@@ -1,8 +1,12 @@
-# Тестовое задание в школу разработки XSOLLА. Frontend поток
+# Тестовое задание в школу разработки XSOLLА. 
+#Frontend поток
 
-Как запускать проект?
+##Как запускать проект?
 ## Development server
 
+1. Скачайте папку проекта на свой компьютер
+2. `https://nodejs.org/en/download/`
+Запустите `ng serve`
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding

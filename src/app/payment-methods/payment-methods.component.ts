@@ -9,10 +9,9 @@ import { HttpErrorResponse } from '@angular/common/http';
     styleUrls: ['./payment-methods.component.css']
 })
 export class PaymentMethodsComponent {
-    constructor(private httpService: HttpClient) { }
-
     rating: Object[];
-
+    constructor(private httpService: HttpClient) { } 
+  
     ngOnInit() {
         this.httpService.get('./assets/data.json').subscribe(
             data => {
