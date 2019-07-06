@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { TransactionsListComponent } from './transactions-list/transactions-list.component';
 import { FilterPipe }from './filter.pipe'
 import { PaymentMethodsComponent } from './payment-methods/payment-methods.component';
+import { ChartComponent } from "./chart/chart.component";
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { PaymentMethodsComponent } from './payment-methods/payment-methods.compo
     AppComponent,
     TransactionsListComponent,
     PaymentMethodsComponent,
+    ChartComponent,
     FilterPipe
   ],
   imports: [

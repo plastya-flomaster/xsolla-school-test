@@ -9,7 +9,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class TransactionsListComponent {
   constructor (private httpService: HttpClient) {}
-  
+ 
+  isShown: Boolean = true;
   transactions: string [];
    
   ngOnInit () {

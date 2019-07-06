@@ -1,18 +1,18 @@
 <script>
-$(window).on("load resize", function() {
-  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
-  $('.tbl-header').css({'padding-right':scrollWidth});
-}).resize();
+  $(window).on("load resize", function () {
+    var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+    $('.tbl-header').css({ 'padding-right': scrollWidth });
+  }).resize();
 </script>
+<div *ngIf="!isShown">
+  <h2>All transactions</h2>
+  <h6>Search here for users:</h6>
+  <input [(ngModel)]="searchText" placeholder="Type username...">
 
-<h2>All transactions</h2>
-<h6>Search here for users:</h6>
-  <input [(ngModel)]="searchText" placeholder="Type username..." >
-
-<div class="tbl-header">
-<table *ngIf = "transactions" cellpadding="0" cellspacing="0" border="0">
-    <thead>      
-  <tr>
+  <div class="tbl-header">
+    <table *ngIf="transactions" cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
           <th>№</th>
           <th>Date</th>
           <th>User</th>
@@ -22,24 +22,27 @@ $(window).on("load resize", function() {
           <th>Amount</th>
           <th>Status</th>
         </tr>
-  </thead>
-</table>
-
- </div> 
- <div class="tbl-content">
-    <table cellpadding="0" cellspacing="0" border="0">
-        <tbody>
-        <tr *ngFor="let transaction of transactions | filter : searchText; index as i">
-        <td>{{i + 1}}</td>
-        <td>{{transaction.transaction.transfer_date | date:'medium'}}</td>
-        <td>{{transaction.user.id}}</td>
-        <td>{{transaction.user.email}}</td>
-        <td>{{transaction.transaction.project.name}}</td>
-        <td>{{transaction.transaction.payment_method.name}}</td>
-        <td>{{transaction.payment_details.payment.amount | currency: transaction.payment_details.payment.currency + " "}}</td>
-        <td>{{transaction.transaction.status}}</td>
-         
-      </tr>
-    </tbody>
+      </thead>
     </table>
-    </div>  
+
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <tr *ngFor="let transaction of transactions | filter : searchText; index as i">
+          <td>{{i + 1}}</td>
+          <td>{{transaction.transaction.transfer_date | date:'medium'}}</td>
+          <td>{{transaction.user.id}}</td>
+          <td>{{transaction.user.email}}</td>
+          <td>{{transaction.transaction.project.name}}</td>
+          <td>{{transaction.transaction.payment_method.name}}</td>
+          <td>
+            {{transaction.payment_details.payment.amount | currency: transaction.payment_details.payment.currency + " "}}
+          </td>
+          <td>{{transaction.transaction.status}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
