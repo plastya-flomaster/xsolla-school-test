@@ -4,4 +4,4 @@
 ##Как запускать проект?
 ## Development server
 
-1. Перейдите по [ссылке] (https://plastya-flomaster.github.io/xsolla-school-test/)
+1. Перейдите по [ссылке](https://plastya-flomaster.github.io/xsolla-school-test/)
