@@ -21,11 +21,9 @@
         </tbody>
     </table>
 </div>
-
-<button (click)="toggleShow()"> Show popularity chart</button>
-<div *ngIf="!isShown">
-    <canvas baseChart
-    [data] = 'chartData'
-    [labels] = 'chartLabels'
-    [chartType] = 'chartType' fontSize='30'></canvas>
+<div class='wrapper'>
+    <button (click)="toggleShow()">Show popularity chart</button>
+    <div *ngIf="!isShown">
+        <canvas baseChart [data]='chartData' [labels]='chartLabels' [chartType]='chartType'></canvas>
+    </div>
 </div>

@@ -8,6 +8,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./transactions-list.component.css']
 })
 export class TransactionsListComponent {
+  searchText: string;
   transactions: string [];
   constructor (private httpService: HttpClient) {}
 
