@@ -9,7 +9,9 @@ import { HttpErrorResponse } from '@angular/common/http';
     styleUrls: ['./payment-methods.component.css']
 })
 export class PaymentMethodsComponent {
-    BarChart = [];
+    public chartLabels: any[] = [];
+    public chartData = [];
+    public chartType ='doughnut';
     isShown: Boolean = true;   
     rating: Object[];
     constructor(private httpService: HttpClient) { } 
@@ -39,6 +41,8 @@ export class PaymentMethodsComponent {
                 this.rating.sort(function (a, b) {
                     return b[1] - a[1];
                 });
+                this.chartData = this.rating.map(function (elem) {return elem[1]})
+                this.chartLabels = this.rating.map(function (elem) {return elem[0]})
             },
             (err: HttpErrorResponse) => {
                 console.log(err.message);

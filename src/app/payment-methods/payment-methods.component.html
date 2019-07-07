@@ -24,5 +24,8 @@
 
 <button (click)="toggleShow()"> Show popularity chart</button>
 <div *ngIf="!isShown">
-    <canvas id='chart'></canvas>
+    <canvas baseChart
+    [data] = 'chartData'
+    [labels] = 'chartLabels'
+    [chartType] = 'chartType' fontSize='30'></canvas>
 </div>
