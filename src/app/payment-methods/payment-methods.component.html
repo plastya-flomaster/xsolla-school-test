@@ -1,23 +1,28 @@
-    <h2>Rating of payment systems</h2>
-    <div class="tbl-header">
-        <table *ngIf = "rating" cellpadding="0" cellspacing="0" border="0">
-            <thead>      
-          <tr>
-                  <th>№</th>
-                  <th>Payment method</th>
-                  <th>Rating</th>
-                </tr>
-          </thead>
-        </table>
-  </div>      
-         <div class="tbl-content">
-            <table cellpadding="0" cellspacing="0" border="0">
-                <tbody>
-                <tr *ngFor="let method of rating; let i = index">
+<h2>Rating of payment systems</h2>
+<div class="tbl-header">
+    <table *ngIf="rating" cellpadding="0" cellspacing="0" border="0">
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Payment method</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+            <tr *ngFor="let method of rating; let i = index">
                 <td>{{i+1}}</td>
                 <td>{{method[0]}}</td>
                 <td>{{method[1]}}</td>
-              </tr>
-            </tbody>
-            </table>
-            </div>  
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<button (click)="toggleShow()"> Show popularity chart</button>
+<div *ngIf="!isShown">
+    <canvas id='chart'></canvas>
+</div>

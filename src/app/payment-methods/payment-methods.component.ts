@@ -9,6 +9,8 @@ import { HttpErrorResponse } from '@angular/common/http';
     styleUrls: ['./payment-methods.component.css']
 })
 export class PaymentMethodsComponent {
+    BarChart = [];
+    isShown: Boolean = true;   
     rating: Object[];
     constructor(private httpService: HttpClient) { } 
   
@@ -43,5 +45,8 @@ export class PaymentMethodsComponent {
             }
         );
     }
+    toggleShow(){
+        this.isShown = !this.isShown;
+      }
 }
 
