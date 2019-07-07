@@ -1,4 +1,4 @@
-  <mat-tab-group>
+  <mat-tab-group mat-align-tabs="center" animationDuration="2000ms">
 
     <mat-tab label="All transactions">
       <router-outlet></router-outlet>
@@ -9,9 +9,10 @@
     </mat-tab>
 
     <mat-tab label="Rating of payment systems">
-        <!-- <chart></chart> -->
       <payment-methods></payment-methods>
+      <chart></chart>
     </mat-tab>
+    
   </mat-tab-group>
 
 

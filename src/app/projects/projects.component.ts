@@ -6,26 +6,33 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
     selector: 'projects',
     templateUrl: './projects.component.html',
-    styleUrls: ['./projects.component.css']
+    styleUrls: ['../transactions-list/transactions-list.component.css']
 })
 export class ProjectsComponent {
-    projects: Object[];
+    projects: any[] = [];
     constructor(private httpService: HttpClient) { } 
   
     ngOnInit() {
         this.httpService.get('./assets/data.json').subscribe(
             data => {
-                var payments = [];
                 var temp;
                 for (var i in data) {
-                    temp = data[i].transaction.projects;
+                    temp = data[i].transaction.project;
                     if (typeof temp !== "undefined") {
-                        payments.push(temp);
+                        this.projects.push(temp);
                     }
                 }
-                this.projects = payments;
-                
-            },
+                function getUnique(arr, comp) {
+
+                    const unique = arr
+                         .map(e => e[comp])
+                         .map((e, i, final) => final.indexOf(e) === i && i)
+                         .filter(e => arr[e]).map(e => arr[e]);
+                  
+                     return unique;
+                  }
+                 this.projects= getUnique(this.projects,'id');
+                },
             (err: HttpErrorResponse) => {
                 console.log(err.message);
             }
