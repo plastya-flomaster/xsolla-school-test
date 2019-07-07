@@ -7,13 +7,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-
 import { AppComponent } from './app.component';
 import { TransactionsListComponent } from './transactions-list/transactions-list.component';
 import { FilterPipe }from './filter.pipe'
 import { PaymentMethodsComponent } from './payment-methods/payment-methods.component';
 import { ChartComponent } from "./chart/chart.component";
+import { ProjectsComponent } from './projects/projects.component';
 
 
 @NgModule({
@@ -22,6 +21,7 @@ import { ChartComponent } from "./chart/chart.component";
     TransactionsListComponent,
     PaymentMethodsComponent,
     ChartComponent,
+    ProjectsComponent,
     FilterPipe
   ],
   imports: [
